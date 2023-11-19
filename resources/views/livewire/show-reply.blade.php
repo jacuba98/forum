@@ -1,5 +1,4 @@
 <div>
-
     <div class="rounded-md bg-gradient-to-r from-slate-800 to-slate-900 hover:to-slate-800 mb-4">
         <div class="p-4 flex gap-4">
             <div>
@@ -20,4 +19,10 @@
 
         </div>
     </div>
+
+    @foreach ($reply->replies as $items)
+        <div class="ml-8">
+            @livewire('show-reply', ['reply' => $items], key('reply-' . $items->id))
+        </div>
+    @endforeach
 </div>
